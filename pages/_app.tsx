@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import Layout from '@components/common/Layout'
 import { builder, Builder } from '@builder.io/react'
 import builderConfig from '@config/builder'
+import { Analytics } from '@vercel/analytics/next'
 builder.init(builderConfig.apiKey)
 
 import '@builder.io/widgets'
@@ -42,6 +43,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout pageProps={pageProps}>
       <Component {...pageProps} />
+      <Analytics />
     </Layout>
   )
 }
